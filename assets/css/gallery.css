@@ -1,0 +1,22 @@
+.img-size{
+    width: 420px;
+    height: 360px;
+    transition: 300ms all ease-in-out;
+    border-radius: 6%;
+}
+.img-size:hover{
+   transform: translate(-3%, 3%)scale(1.2) rotate(5deg);
+}
+
+.gallery-img{
+    width: 100%;
+    max-width: 41rem;
+    max-height: 36rem;
+    overflow-wrap: hidden;
+}
+.logo{
+    height: 7rem;
+    width: 3rem;
+    padding-bottom: 0;
+
+}

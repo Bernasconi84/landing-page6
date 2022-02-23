@@ -1,0 +1,246 @@
+.section{
+    min-height: 100vh;
+}
+.main-bg {
+    background-image: url('../img/imagem.svg.svg');
+    background-size: cover;
+    background-position: center center;
+    color: var(--white--);
+}
+.white-bg {
+    background: var(--white--);
+    color: var(--primary-color--);
+}
+
+.main-content{
+    max-width: 140rem;
+    margin: 0 auto;
+    padding: 8rem var(--gap);
+    overflow: hidden;
+    overflow-y: hidden;
+
+    
+}
+
+.menu-spacing{
+    height: 6.5rem;
+}
+
+.intro-content {
+   /* position: relative;*/
+    top: - 6.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--gap);
+    min-height: 100vh;
+}
+
+.intro-text .intro-img{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
+.intro-text h2{
+    font-size: 6rem;
+    margin-bottom: 6rem;
+    text-align: justify;
+    text-transform: uppercase;
+    line-height: 1.2;
+    padding-top: 6rem;
+    max-height: 100vh;
+    
+}
+
+.intro-img img{
+   max-width: 100%;
+   min-height: auto;
+}
+
+.top3-content{
+    max-width: 90rem;
+    min-height: 100vh;
+    display: flex;
+   /* flex-flow: column wrap;*/
+     flex-direction: column;
+     flex-wrap: nowrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.grid-one-content{
+    min-width: 140rem;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    min-height: 100vh;
+    
+}
+
+.h2grid{
+    margin-bottom:0.5rem;
+    padding-top: 6rem;
+}
+
+.grid-description{
+    padding-bottom: 5rem;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+    counter-reset: contador;
+}
+
+.grid h3{
+    font-size: 3rem;
+    position: relative;
+    padding-bottom: 3rem;
+    padding-left: 5rem;
+}
+
+
+.grid h3::before{
+    counter-increment: contador;
+    content: counter(contador);
+    position: absolute;
+    font-size: 8rem;
+    font-style: italic;
+    top: -4rem;
+    left: -2rem;
+    transform: rotate(9deg);
+
+}
+
+.contact-form{
+    grid-column: span 2 ;
+}
+
+.contact-form .form-grid{
+    border: none;
+    display: flexbox;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--gap);
+}
+.form-group{
+    flex: 1 1 400rem;
+    
+}
+.form-group label{
+    display: block;
+}
+
+.form-group input,
+.form-group textarea{
+    border: none;
+    background: var(--white--);
+    padding: 1.5rem 2rem;
+    width: 100%;
+    font-size: 1.8rem;
+}
+
+.full-width{
+    width: 100%;
+    flex: 1 1 100%;
+}
+.form-group button{
+    border: 0.5rem solid var(--white--);
+    background: none;
+    color: var(--white--);
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+    font-size: 3rem;
+    transition: all 410ms ease-in-out;
+}
+.form-group button:hover{
+    border: 0.5rem solid var( --light-gray-color--);
+    background: var(--white--);
+    color: var(--primary-color--);
+
+    
+}
+
+.form-group::placeholder{
+    color: var(--primary-color--);
+}
+.form-group input:focus,
+.form-group textarea:focus{
+    box-shadow: 0 0 15px 5px var(--light-gray-color--s);
+}
+.close-menu{
+    display: none;
+}
+
+@media(max-width: 900px) {
+         .intro-content, .grid {
+            grid-template-columns: 1fr;
+
+        }
+        .gallery-img{
+            width: 100%;
+            max-width: auto;
+            max-height: auto;
+
+        }
+        .gallery-img{
+            width: 100%;
+        }
+        .menu-content, .menu-content ul{
+            flex-direction: column;
+            justify-content: center;
+        }
+        .menu{
+            bottom: 0;
+            text-align: center;
+        }
+        .menu-content{
+            height: 100vh;
+        }
+        
+        .menu{
+            display: none;
+        }
+        .close-menu{
+            display: none;
+        }
+        
+        .close-menu{
+            position: fixed;
+            z-index: 2;
+            top: 0;
+            left: 0;
+        }
+        .close-menu-label::after{
+            content: '≡';
+            position: fixed;
+            z-index: 2;
+            top: 1rem;
+            right: 1rem;
+            background: var(--primary-color--);
+            color: var(--white--);
+            font-size: 3rem;
+            line-height: 3rem;
+            width: 3rem;
+            height: 3rem;
+            text-align: center;
+            padding: 0.5rem;
+            cursor: pointer;
+        }
+        
+        .close-menu:checked~.menu{
+            display: block;
+        
+        }
+        .close-menu:checked~.close-menu-label::after{
+            display: block;
+            content: '×';
+        
+        }
+        
+        .menu-spacing{
+            display: none;
+        }
+
+}
